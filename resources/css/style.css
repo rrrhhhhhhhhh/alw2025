@@ -1,22 +1,24 @@
 /* ALW 2 */
 
-
 @import url("https://p.typekit.net/p.css?s=1&k=jul3ynh&ht=tk&f=8482.8483&a=1386353&app=typekit&e=css");
 
 @font-face {
-font-family:"adobe-caslon-pro";
-src:url("https://use.typekit.net/af/3cbd9b/000000000000000000012d68/27/l?primer=c4e4cd189e2a02025a5d541854cf6393365473590ae827c14608e929984783f1&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/3cbd9b/000000000000000000012d68/27/d?primer=c4e4cd189e2a02025a5d541854cf6393365473590ae827c14608e929984783f1&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/3cbd9b/000000000000000000012d68/27/a?primer=c4e4cd189e2a02025a5d541854cf6393365473590ae827c14608e929984783f1&fvd=n4&v=3") format("opentype");
-font-display:auto;font-style:normal;font-weight:400;
+  font-family:"adobe-caslon-pro";
+  src:url("https://use.typekit.net/af/3cbd9b/000000000000000000012d68/27/l?primer=c4e4cd189e2a02025a5d541854cf6393365473590ae827c14608e929984783f1&fvd=n4&v=3") format("woff2"),
+      url("https://use.typekit.net/af/3cbd9b/000000000000000000012d68/27/d?primer=c4e4cd189e2a02025a5d541854cf6393365473590ae827c14608e929984783f1&fvd=n4&v=3") format("woff"),
+      url("https://use.typekit.net/af/3cbd9b/000000000000000000012d68/27/a?primer=c4e4cd189e2a02025a5d541854cf6393365473590ae827c14608e929984783f1&fvd=n4&v=3") format("opentype");
+  font-display:auto;font-style:normal;font-weight:400;
 }
 
 @font-face {
-font-family:"adobe-caslon-pro";
-src:url("https://use.typekit.net/af/200aad/000000000000000000012d67/27/l?primer=c4e4cd189e2a02025a5d541854cf6393365473590ae827c14608e929984783f1&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/200aad/000000000000000000012d67/27/d?primer=c4e4cd189e2a02025a5d541854cf6393365473590ae827c14608e929984783f1&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/200aad/000000000000000000012d67/27/a?primer=c4e4cd189e2a02025a5d541854cf6393365473590ae827c14608e929984783f1&fvd=i4&v=3") format("opentype");
-font-display:auto;font-style:italic;font-weight:400;
+  font-family:"adobe-caslon-pro";
+  src:url("https://use.typekit.net/af/200aad/000000000000000000012d67/27/l?primer=c4e4cd189e2a02025a5d541854cf6393365473590ae827c14608e929984783f1&fvd=i4&v=3") format("woff2"),
+      url("https://use.typekit.net/af/200aad/000000000000000000012d67/27/d?primer=c4e4cd189e2a02025a5d541854cf6393365473590ae827c14608e929984783f1&fvd=i4&v=3") format("woff"),
+      url("https://use.typekit.net/af/200aad/000000000000000000012d67/27/a?primer=c4e4cd189e2a02025a5d541854cf6393365473590ae827c14608e929984783f1&fvd=i4&v=3") format("opentype");
+  font-display:auto;font-style:italic;font-weight:400;
 }
 
 .tk-adobe-caslon-pro { font-family: "adobe-caslon-pro",serif; }
-
 
 * {
   margin: 0;
@@ -52,7 +54,6 @@ h1, .about-trigger, .about-close, p, dl, dt, dd {
 ul {
   list-style: none;
   position: relative;
-
 }
 li {
   margin-left: 11rem;
@@ -66,13 +67,8 @@ strong {
   text-indent: -8rem;
   display: inline-block;
 }
-
 i {
   font-style: italic;
-}
-
-ul, h2 {
-
 }
 dd {
   display: inline;
@@ -88,34 +84,29 @@ h2 {
   top: 0;
   left: 35vw;
   background: #FFFFFF;
-  z-index: 5;
+  z-index: 100; /* raised so overlay always sits above */
   height: 100vh;
   padding: 0.5em 0 0.5em 0.5em;
   overflow-y: auto;
 }
-
 .about a:hover {
   color: black;
   text-decoration: underline;
 }
-
 .about a:visited {
   cursor: pointer;
   text-decoration: underline;
   color: #000000;
 }
-
 a:visited {
   cursor: pointer;
   text-decoration: underline;
   color: #000000;
 }
-
 a {
   cursor: pointer;
   color: #000000;
 }
-
 .about p {
   max-width: 85%;
 }
@@ -123,7 +114,8 @@ a {
   display: block;
   box-shadow: -11px -1px 20px -1px rgba(0,0,0,0.25);
 }
-.about.open + .images-left {
+/* ✅ fixed selector so images hide when About is open */
+.about.open ~ .images {
   visibility: hidden;
 }
 .about-close {
@@ -166,11 +158,9 @@ main {
   display: flex;
   justify-content: center;
 }
-
 .images.mobile {
   display: none;
 }
-
 figure {
   max-width: 100%;
 }
@@ -182,32 +172,26 @@ figcaption {
   padding: 0.5em 0;
   text-align: left;
 }
-
 .left {
   left: 0;
   padding: 2em;
   padding-left: 3em;
 }
-
 .right {
   right: 0;
   padding: 2em;
 }
-
 .right figure {
   max-width: 90%;
 }
-
 .right img {
   max-width: 100%;
   display: block;
 }
-
 .left img {
   max-width: 100%;
   display: block;
 }
-
 .archive {
   font-size: 1.7rem;
   line-height: 1.2;
@@ -216,95 +200,36 @@ figcaption {
   display: block;
   color: #000000;
 }
-
 .archive a:hover {
   cursor: pointer;
   text-decoration: underline;
   color: #000000;
 }
-
 .archive a:visited {
   cursor: pointer;
   text-decoration: underline;
   color: #000000;
 }
-
 h1 a:hover {
   cursor: pointer;
   text-decoration: underline;
   color: #000000;
 }
-
 h1 a:visited {
   cursor: pointer;
   text-decoration: underline;
   color: #000000;
 }
-
-
 #reverse {
-  /* margin-left: -4.4rem; */
   display: inline;
 }
-
 .hold {
   margin-top: 100px;
   margin-left: 10px;
   margin-right: 10px;
   display: block;
-  vertical-align: middle;
-}
-
-/* TEST THUMBNAIL STARTS
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-.responsive {
-  /* position: relative;
-  display: inline-block;
   vertical-align: middle;
-  margin: 0 0 1.4em 0;
-  padding: 0 1.25rem;
-  padding-bottom: 2.8em;
-  padding: 0 6px;
-  float: left;
-  width: 24.99999%;
 }
-
-@media only screen and (max-width: 700px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .responsive {
-    width: 100%;
-  }
-}
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* test end */
-
-
-/*
-.archive:link {
-  color: #000000;
-}
-
-.archive p:hover a:visited {
-  color: #000000;
-}
-*/
 
 @media(max-width: 810px) {
   .about {
@@ -317,27 +242,22 @@ div.gallery img {
     max-width: 100%;
     padding: 0 1rem;
   }
-
   h1, .about-trigger, .about-close, p, dl, dt, dd {
     font-size: 2rem;
   }
-
   .about-trigger {
     left: auto;
     right: 1rem;
   }
-
   .images.mobile  {
     display: flex;
     width: 100%;
     padding: 1em;
   }
-
   .images.mobile img  {
     max-width: 100%;
     display: block;
   }
-
   .images:not(.mobile) {
     display: none;
   }
@@ -349,75 +269,59 @@ div.gallery img {
   }
 }
 
-/* Document */
-
-
 img {
-	border-style:none;
-	width: 100%;
+  border-style:none;
+  width: 100%;
 }
-
 table {
-	width: 100%;
-	border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
-
-/* links */
-
-
-
 canvas:focus {
-	outline: none;
+  outline: none;
 }
-
 #cover-container {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 /* Containers */
-
-
 .mainContainer {
-	position: relative;
-	z-index: 50;
+  position: relative;
+  z-index: auto; /* was 50, now auto so About overlays correctly */
 }
-
-
 .thumbsContainer {
-	width: 220px;
-	float: left;
-	margin: 0 10px 10px 0;
+  width: 220px;
+  float: left;
+  margin: 0 10px 10px 0;
 }
-
 .coverContainer {
-	width: 100%;
+  width: 100%;
 }
-
 .captionContainer {
-	width: 100%;
-	padding: 5px 0 0 0;
+  width: 100%;
+  padding: 5px 0 0 0;
 }
-
-.captionContainer:hover {
-}
-
 
 /* mobile styles */
-@media screen and (max-width: 568px)
-{
-	* {
-		box-sizing: border-box;
- 		-moz-box-sizing: border-box;
-  		-webkit-box-sizing: border-box;
-	}
-	.mainContainer {
-		width: 100%;
-		padding-top: 30px;
-	}
-	.thumbsContainer {
-		width: inherit;
-		float: inherit;
-		margin-left: auto;
-		margin-right: auto;
-	}
+@media screen and (max-width: 568px) {
+  * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  .mainContainer {
+    width: 100%;
+    padding-top: 30px;
+  }
+  .thumbsContainer {
+    width: inherit;
+    float: inherit;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Optional: prevent background scroll when About is open */
+body.about-open {
+  overflow: hidden;
 }
